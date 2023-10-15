@@ -1,0 +1,3 @@
+I am a student of class 12.
+I like Computer Science.
+I am good at programming.

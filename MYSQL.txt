@@ -1,0 +1,374 @@
+Chief Inventor of MySQL - Michael Widenius. Logo of MySQL - the dolphin - 'Sakila' lol
+Kinda full form - MySQL - Structured Query Language
+
+DATABASE
+Collection of systematic interrelated data stored together to serve multiple applications. A table/relation is a group of all logically related records
+Facilitates efficient retrieval and modification of data
+
+RDBMS - Relational Database Management System
+DBMS - Database Management System
+A software that is responsible for storing, maintaining and utilizing databases. A database along with a DBMS refers to a 'database system'
+Need:
+Different application programmers and different end users will have different views of data which must be derived from a common overall data structure. Their methods of accessing data will differ
+Storing data in file processing systems can have redundancy(duplication), inconsistency(multiple copies of same data, not matching with one another), unsharable data, unstandardized data, insecure data, incorrect data. A DBMS provides centralized control of data thereby minimizing these problems
+Easy to use, well presented data, access control features present
+Disadvantages:
+Extra hardware may be required, performance overhead may be significant, system is likely to be complex
+
+RELATIONAL DATABASES
+eg: MySQL, SQLite, PostgreSQL
+DBMS for mobiles - SQL Anywhere, DB2 Anywhere
+Byte - Group of 8 bits used to store a character
+Data item/Field - Smallest unit of named data, each field has only one value
+A table in a relational database cannot store empty values
+Rows are called Tuples or Records
+Record - Named collection of data items which represent a complete unit of information
+Cardinality is number of rows(Dont count header)
+Columns are called attributes. Fields are the columns containing one type of information(which is the case always)
+Degree is number of columns
+There is no order maintained for rows or columns in a relation(Values cannot be accessed by giving row number)
+
+DOMAIN - Pool of values from which all the data is drawn
+Atomic Domains - All the elements are indivisible units. eg: set of integers
+Non-Atomic Domains - eg: set of sets of integers
+
+Data Integrity - Maintainence of format and initial form of data
+
+VIEW - 'Virtual table' that does not really exist in its own right but is derived from one or more underlying base tables(which actually contain data)(select command)
+Views do not contain data of their own but are taken from other tables depending upon the execution of a given query
+There is no stored file created for storing a view's contents, only the definition is stored
+A view can be used just like any other table(it can be queried, updated, inserted into, deleted from and joined with other tables and views)
+Views are an excellent way to give people access to some but not all the information in a table
+Even 'Read-Only' views can be created which means that they cannot be subjected to update commands
+
+KEYS
+Primary Key - Set of one or more attributes that can uniquely identify tuples within the relation - DOES NOT have duplicates or null values
+Primary Keys are generally declared for numerical data
+
+Composite Key - Groups of attributes declared as a primary key
+Candidate Keys - Columns that are eligible to become primary keys(Also have ALL unique values)(One of them also may be a primary key)
+Alternate Keys - A candidate key that is not a primary key
+Foreign Key(Table in which it exists is called Foreign/Detail table) - An attribute whose values are derived from the primary key of some other table(Primary table/Master table)
+
+REFERENTIAL INTEGRITY is a system of rules that a DBMS uses to ensure that relationships between records in related tables are valid, and that users dont accidentally delete or change related data
+Conditions for Application:
+1) The matching field from the 'primary table' should be a 'primary key'
+2) The related fields have same datatype(not necessarily same name)
+3) The related tables must be from the same database
+
+When Applied:
+1) Changing or updating a value in the primary table will reflect changes in the child table
+2) Adding a NULL value in the foreign key is allowed, but adding non null values is not allowed
+
+Key Features of MySQL:
+Consists of a MySQL server instance and a MySQL database
+MySQL Clients are programs that connect to the MySQL server and issue queries in a prespecified format. The client program may contact the server programmably or manually
+MySQL Server instance listens for client requests coming in over the network and accesses database contents according to those requests and provides that to the clients
+Fast, Easy to use, Free of cost
+Portability(Working on different platforms)
+Datatypes(Variety of datatypes provided including fixed length and variable length)
+Security(Robust password system)
+Scalability(Handling large databases) 
+Localization(Error messages can be provided in many languages) 
+Commands are not Case Sensitive
+
+Data Dictionary - A file that contains data about data(metadata)
+
+Data Definition Language(DDL) 
+Commands related to data definition
+1) To create, alter, delete, drop objects such as tables and views(create,drop,alter,rename)
+2) To grant and revoke privileges and roles(Data Control Language(DCL) Commands)(grant,revoke)
+3) To analyze information on a table with an aim of maintaining it.(analyze,check,repair,restore)
+We havnt used the last 2, idk what it is
+
+Data Manipulation Language(DML)
+Retrieval, insertion, deletion or modification of data(Basically access and manipulate) (insert,update,delete,modify)
+Procedural DMLs require a user to specify what data is needed and how to get it
+Non-Procedural DMLs require a user to specify what data is needed without specifying how to get it
+
+Transaction Control Commands(TCL)
+To manage and control transactions
+Commit - Makes changes made by statements permanent
+Rollback - Undoes all changes since the beginning of a transaction or savepoint
+Savepoint - It marks a point upto which all earlier statements have been successfully completed
+Set Transaction - Establishes properties for the current transaction
+
+MySQL Elements:
+Literals - Character literals are those which are enclosed by quotes(single or double), reperesent a fixed data value and not an object. Unquoted numbers are integer literals, while unquoted letters are objects
+Numeric literals can store a maximum of 53 digits of precision
+A text literal can have maximum length of 4000 bytes
+
+Datatypes - Means to identify type of data and associated operations for handling it
+Numeric - int,smallint,tinyint,mediumint,bigint,
+float(l,d) - where l is the total length, and d is the number of decimals. decimal precision upto 24 places
+double(l,d) - where l is the total length, and d is the number of decimals. decimal precision upto 53 places
+decimal(l,d) or numeric(l,d) - unpacked floating point number in which each decimal corresponds to 1 byte(same l,d) 
+
+Date and Time - date,datetime,timestamp,time,year
+String - char,varchar,blob/text,tinyblob/tinytext,mediumblob/mediumtext,longblob/longtext
+List - enum
+select salary+NULL; will return Null (All arithmetic operations containing null, always returns a null)(Hence null is not equal to 0)
+Two nulls cannot be compared, added or anything else
+Other SQLs wont let you have multiple null values, only My SQl lets you do that(Null duplication na)
+
+Differences between char and varchar:(First char then varchar)
+The unused bytes(the left out bytes after filling info) is padded with whitespaces(Fixed length fields).....Left out bytes are discarded(Variable length fields)
+Dont have to give size while initialising....HAVE to give some size
+It is faster in searching and sorting as a fixed number of bytes are allocated from beginning....Slower, processing is complex
+
+Comments - Text that is not executed, and is for documentation purpose only, describes the statement's purpose 
+Single line is '#' OR '-- '. Multiline is /*         */
+
+Keywords are words that have special meaning in SQL
+Commands are instructions given by you to the SQL Database, they consist of one or more logically distinct parts called clauses(eg: a statement having FROM and WHERE)(limits the result set by providing conditions to the query.). Arguments complete the meaning of a clause
+A query is a command that is given to produce a certain specified information from the database table
+Objects are structures in the database that are given names and stored in memory
+Statements are completed with a semicolon at the end
+
+Constraints - Conditions or checks applicable on a field or a set of fields
+
+Unique Constraint - No two rows have the same value in the specified columns
+Primary keys cannot have null values, but unique keys can have null values
+Primary keys are used for referential integration, not with unique keys
+Can have multiple unique keys, but there is only one primary key per table
+
+Table constraint applied on multiple columns(appear at the end of a table definition)(Like that unique on 2 columns), Column constraint on only one column
+
+Check constraint does not work in My SQL, like less than 100 only i will accept(Check constraint gets parsed but ignored)
+
+
+ALIASES
+A programmer can use an alias to temporarily assign another name to a table or column for the duration of a SELECT query. 
+Assigning an alias does not actually rename the column or table. This is often useful when either tables or their columns have very long or complex names. 
+An alias name could be anything, but usually it is kept short. For example, it might be common to use a table alias such as "pi" for a table named "price_information".
+The general syntax of an alias is SELECT * FROM table_name [AS] alias_name. 
+Note that the AS keyword is completely optional and is usually kept for readability purposes.
+
+Can use tabulate here too
+Phone numbers may use char datatype for '+'
+QUIT or EXIT to exit mySQL
+boolean to store logical values
+
+-----DDL-----
+create database G12new;
+create database if not exists G12new;
+drop database G12new;
+drop database if exists g12;
+use G12; #To change database
+show tables;
+create table student(roll int, name char(25));
+desc student; #Can use describe also
+alter table student add marks int; # alter used for changing or modifying the structure of the table
+alter table student drop mask; #to delete column OR alter table student drop column mask;
+alter table student change marks totalmarks int; To change name of column
+alter table students rename column bname to fname; #Another way to change name of column
+rename table student to students; #Renaming tables
+create table student(id int); #Doesnt work as table is already there
+create table if not exists student(id int);
+drop table student;
+drop table if exists student;
+alter table students modify name varchar(20); #To change datatype
+alter table students modify fname char(25) first; #To move a column's position that is already there
+alter table students add marks int first; #To add column at beginning of table(in contrary to end)
+alter table students add marks int after rollno; #To add column after a specific column
+insert into students values(100,1,'John',14312435); #To add data in columns(Can add only in the same order as the column  is created)(Cant omit any column)
+select * from students; #Show all the data in all the columns in the table
+select mask from students; #To show data from just one column
+insert into students(marks,name) values(99,'Mary') #To give values for specific columns(can omit and all)
+insert into temp values(13,'dog'),(14,'pig'); #Inserting multiple rows
+
+create table temp(id int not null,name char(20));(This is a constraint)
+insert into temp(name) values('dad'); #Wont work as id cant be null
+alter table temp modify id int null; OR alter table temp modify id int; #Will modify not null to null
+alter table temp modify name char(20) not null; #Will modify null to not null
+drop table temp;
+
+create table temp(id int,name char(20) default 'John'); #To give a default value(This is a constraint)
+insert into temp(id) values(123);
+
+alter table temp alter name set default 'HAk'; #To change default value
+alter table temp alter name drop default; #To delete default value back to null # If we drop default when there was no default, NO ERROR
+
+create table ut(id int unique); #To make a column which can only accept unique values
+alter table temp modify id int unique; #To change a key to a unique key(unique comes after)
+alter table temp add unique key(name); #To change a key to a unique key(unique comes before)
+alter table temp drop index name; #To make unique un-unique
+insert into temp values(11,'frog');
+insert into temp values(11,'goat');#WONT WORK as id is a unique key
+
+create table house(id int, name char(20), unique (id,name)); #Create a table that doesnt accept only if both are same(unique comes before)
+insert into house values(11,'grow');
+insert into house values(11,'fall');#WILL work
+alter table house drop index (id,name); #Dropping constraint doesnt work like this
+alter table house drop index id; #Works like this
+
+create table west(id int,name char(20),constraint uk_id unique (id,name)); #Giving a unique name for your constraint to refer to it afterwards easily
+alter table west drop index uk_id;  #Using that id for Dropping
+alter table west add constraint uk_id unique(id); #Using a name for the constraint
+alter table west add constraint uk_id primary key(id); #Using primary keyword for creating primary key with uk_id name
+alter table west drop primary key;
+
+create table dupl as select * from west; #Making a copy of a table
+insert into dupl(select * from students where stipend > 400); #Moves a part of another table into this table using conditions
+
+FOREIGN Key- Representation of a column(primary key) of the parent table
+#PARENT table or BASE table
+create table cust(ID int primary key,name char(10)); 
+insert into cust values(1,'aa'),(2,'bb'),(3,'cc');
+delete from cust where ID = 3; #Only in this table ID 3 is deleted
+
+#CHILD Table
+create table ord(oID int primary key,oname char(10), ID int, foreign key(ID) references cust(ID) on delete cascade on update cascade); See keywords 'references'(Its a constraint). 'on update cascade' and 'on delete cascade' means reflect respective changes in child table also
+insert into ord values(11,'bed',1),(12,'table',1),(13,'TV',2),(14,'Phone',3);
+insert into ord values(18,NULL,NULL); #Null values can be inserted(But ID is primary, so have to give)
+insert into ord values(15,'Pencil',4); WONT WORK as no extra ADDITIONS(ID=4) can be made in child table. Updations and deletions can be done
+
+delete from cust where ID = 3; #Now changes are reflected in ord table also
+update cust set ID = 6 where name = 'bb'; #Changes reflected in child table again
+drop table ord;drop table cust; #Can drop only in this order
+
+------DML--------
+ALL THESE COMMANDS DONT CHANGE THE TABLE. THEY ONLY DISPLAY
+#WHENEVER THERE IS NOTHING TO GET, IT WILL RETURN EMPTY SET
+
+select name,grade from students; #Display multiple columns at a time
+select distinct grade from students; #No duplicate values displayed(if null is there, only one Null will come) (The table does not have heading as distinct(grade))
+select distinct grade,class from students; #Distinct PAIRS given(composite column given)
+select distinct (grade,name) from students;  #Cant do that, ONLY ONE column for distinct keyword
+select count(distinct grade) from students; #Gives number of distinct grades
+select all grade from students; #same as (select grade from students)
+select stipend*12 from students; Displays all values- multiplied by 12 OR if its a string '*12' will be appended
+IMP select stipend*12 as annual_stipend from students; #To select while renaming the column and doing operation on values
+select stipend*12 as 'annual stipend' from students; #Same as above
+select name, 'is studying in', class from students; #Displays a table with entries like 'Karan' 'is studying in' '12 B' in each row
+select * from students where class = '12B'; #Displays all the details of the entry which has class = 12B
+select * from students where class = section; #If the value of class is the same as section(WORKS)
+select * from students where No = 8; #Displays all the details of the entry which has No = 8(No quotes)
+select * from students where Stipend > 400; #Displays all the details of the entries where stipend > 400
+select * from students where No != 4; OR select * from students where No <> 4;#Displays all details of entries where No is not 4
+select * from students where grade = 'A' and class = '12A'; #Displays all details of entries whose grade is 'A' and class is '12A'
+select * from students where class in ('12A','12B','12C'); #Displays all details where class is 12A or 12B or 12C
+select * from students where class = '12A' or class = '12B' or class = '12C'; #Same as above
+select * from students where class not in ('12A','12B','12C'); #Displays all details of entries where class is not 12A 12B or 12C
+
+% and _ are  WILDCARD characters
+select * from students where Name like 'd%'; #Displays all details of the entries whose name starts with 'd'. % means any number of characters after d is fine(variable length)
+select * from students where Name like '____'; #Displays all details of the entries whose name's length is 4 (4 underscores)
+select * from students where Name like '%n'; #Displays all details of entries whose name endswith 'n'. Here, % means any number of characters before n is fine
+select * from students where Name like '%h%'; #Displays all details of entries whose name has a 'h' in it.
+If you want to match '%' use '\%' Just like escape sequences
+
+insert into students(no,name,stipend,stream,avgmarks,class) values(11,'NewGuy','400','Commerce','86.7','12B');
+select * from students where grade is Null; #To display whose grade is empty
+select * from students, ifnull(DOB,'Not born'); #Changes all null values ONLY for display
+select * from students where grade is not Null; #To display whose grade is not empty
+select * from students where stipend between 300 and 400; #To display whose stipend is in 300 and 400(BOTH INCLUDED)(Use between only when ranges are specified)
+select * from students where stipend >= 300 and stipend <= 400; #Same as above
+select * from students where stipend not between 300 and 400; #Negation of the previous one
+Orderby clause follows all other clauses (Used to sort the values of a field in ascending or descending order)
+select * from students order by name; #Displays all the entries with name sorted BY DEFAULT IN ASCENDING ORDER
+select * from students order by name desc; #Displays same thing in descending order
+select stream, name from students order by stream; #Displays stream and name column with stream in ascending order
+select stream, name from students order by stream,name desc; #Displays stream and name column, FIRST sorting the whole list by stream in ascending order, and THEN IF there are duplicate streams, in THOSE streams it will sort names in descending order
+
+select max(name) from students; # Returns biggest name (character by character NOT LENGTH)
+select name from students order by length(name); #To sort by length of name
+select max(stipend) from students;
+select avg(stipend) from students;
+# if you do avg on a column with a NULL it wont consider it at all(neither for addition or division)
+select sum(stipend) from students where class = '12A';
+
+The group by clause combines all those records that have identical values in a particular field or a group of fields. This grouping results into one summary record per group
+For subgrouping, put the subgrouped column after the grouped column
+select class,count(*) from students group by class; #Gives number of students in each class
+select name,count(*) from students group by class; #Gives first student name of each class, number of students in each class also (Because it was actually scheduled to give full name list, but count column has only one value)
+select name,class,count(*) from students group by class; #Gives same as above, but an extra column 'class' will be there
+select class,max(stipend) from students group by class; #Displays maximum stipend earned by each class
+select class,sum(stipend) from students group by class; #Displays sum of stipends in each class
+select dept,max(salary) from emp_details group by dept having dept in ('Sales','Finance');
+
+Single Row functions work with a single record at a time and return one value
+Aggregate/Scalar/Multiple Row functions are those that work on multiple values in a column but return one value
+#CANNOT use WHERE with aggregate functions like sum avg and all. use HAVING. if using WHERE, it must come BEFORE group by
+HAVING without group by - it works like a WHERE clause
+
+sum,avg,count etc. IGNORE Null values(as in, ignore that that row even exists), BUT count(*) doesnt
+select count(grade) from students; #Gives number of rows which DONT HAVE NULL VALUES (With header count(grade))
+select count(*) from students; #Gives number of rows in the table(FULL)
+select class,sum(stipend) from students group by class having sum(stipend) > 400;
+select class,count(*) from students group by class having count(*) > 2; #Gives number of students in each class, ONLY IF the number of people in each class is more than 2
+
+update students set grade = 'B'; #Changes all entries in grade column to B
+update students set grade = 'B' where no = 11; #Changes grade of roll no 11 to B #Usually use where with a unique key
+delete from students; #Full table gone
+delete from students where No = 9; #Row 9 will be gone, and other entries after 9 will be pushed up. So number of rows will be decreased by one
+
+select 5+10; #To do maths RANDOMLY. Creates dummy table called 'dual' and does calculation and puts it in the table
+select 5+10 from dual; Same as above
+#CANNOT create a table called 'dual'
+select curdate(); OR select current_date(); OR select current_date; #Displays current date in a column called 'curdate()'/'current_date()'/'current_date'
+select date('2020-12-31 01:02:03'); Gives 2020-12-31 with the respective function name as header as before
+select dayname('2003-12-17'); # returns 'Wednesday' (whoah it has caps)
+select month('2020-12-31') gives 12
+select year('2020-12-31') gives 2020
+select now() #Returns only the time at which the function executes
+select date(now()); #returns the only the current date
+select month(now()); #returns only the current month number
+select sysdate() #returns the current date and time
+
+Advantage - select individual components of a date if we use date datatype
+create table temp(rollno int , DOB date , class char(20)); #Watch how there is a datatype called date(Input in string), format is given below
+insert into temp values(1,'2000-10-12','11A'),(2,'2001-12-03','11B'),(3,'1991-02-02','12A'),(4,'2000-12-23','12B');
+select * from temp where DOB = '2001-12-03';
+select * from temp where month(DOB) = 12; #Displays all values of person whose month in the date is 12
+select * from temp where day(DOB) = 23;
+select * from temp where monthname(DOB) = 'December'; (whoah it has caps)
+select * from temp where DOB like '%-12-%'; #Does same as above
+select * from temp where dayname(DOB) = 'Monday';
+select * from temp where year(DOB) = 2000;
+
+More SQL functions:
+
+String:
+
+concat() - select concat(e_name,dept) from emp_details; - displays one column with each value concatenated
+lcase() OR lower() - select lower('Obama'); - gives obama
+substring() OR substr() OR mid() -  select substr('abcdefgh',2,4); gives bcde. Returns the text starting from a specified number of letters to a specified letter.(Indexing starts from 1)  
+upper() OR ucase() - select upper('Obama'); gives OBAMA
+trim() - select trim('  fsd  '); gives fsd
+length() - select length('abcdef'); gives 6
+right() - select right('abcdef',3); selects 3 rightmost characters and gives 'def'
+left() - select left('abcdef',3); selects 3 leftmost characters and gives 'abc'
+instr() - returns the position of the first occurrence(case insensitive) of a string in another string.(not found returns 0) eg:  SELECT INSTR ('twelve', lV); gives 4
+
+
+Numeric:
+
+mod() - select mod(11,4); gives 3
+abs() - select abs(-9); gives 9
+sign() - select sign(-15); gives -1  select sign(15); gives 1
+sqrt() - select sqrt(100); gives 10
+power() OR pow() - select pow(3,2); gives 9
+round() - select round(12.5623,2); gives 12.56
+truncate() - select truncate(15.79,1); gives 15.7
+
+Joins can be done even with more than 2 tables
+An SQL Join is a query used to combine data from two tables on the basis of a common criteria
+Natural Join creates an implicit join clause based on the common columns using the keyword 'natural join'
+Equijoin is a MySQL join where we use '=' as  the comparison operator
+
+create table employee(ID char(20),Name char(20),Sales int,JobID int);
+insert into employee values('E1','Sumit Singh',1100000,102),('E2','Vijay Singh',1300000,101),('E3','Ajay Rajpal',1400000,103),('E4','Mohit Ramnani',1250000,102),('E5','Shailja Singh',1450000,103);
+create table Job(JobID int,JobTitle char(25), Salary int);
+insert into Job values(101,'President',200000),(102,'Vice President',125000),(103,'Administration Assistant',80000),(104,'Accounting Manager',70000),(105,'Accountant',65000),(106,'Sales Manager',80000);
+
+select * from employee,job; Displays a cartesian product/Unrestricted Join of both the tables
+select ID,name,sales,employee.jobid,jobtitle,salary from employee,job where employee.jobid = job.jobid; #JOINS 2 tables with jobid column, ONLY when the jobids in each column are equal(105 and 106 have no match and wont be displayed)(Jobid column is displayed in the middle)EQUIJOIN(the two tables will be 'joined' 'side by side', hence duplicates will be there)(as we use '=')(datatypes should be same in the columns, column names can be different)
+select ID,name,sales,jobtitle,salary,emp.jobid from employee emp,job where emp.jobid = job.jobid; Shortening employee to emp CANT use employee anymore
+select name,jobtitle,salary from employee emp,job where emp.jobid = job.jobid  and jobtitle = 'Vice president'; #Display name salary and jobtitle of vice president(DONT forget to link)(watch how 'and' is used, as we cant use more than one 'where')(duplicate COLUMNS including both the jobid columns seen twice)
+
+select * from employee natural join job; #JOINS 2 tables when datatype AND column name are same(Here JobId column is displayed first)NATURALJOIN(No duplicate COLUMNS displayed)
+
+NESTED QUERY
+select name,stipend from students where stipend = (select max(stipend) from students); #returns all names with max stipend
+

@@ -1,0 +1,62 @@
+Data Structure: 
+Data collection with well defined operations and behaviour
+Logical way of organizing data in memory that considers not only the items stored but also the relationship among the items so as to give efficient and optimal performance
+
+Datatype:
+A datatype is a means to identify type of data and associated operations for handling it
+
+Static/Simple Data Structure(Normally built from primitive data types) is the one which has a fixed size(array has fixed length, if you delete the element goes, place is still there and empty. You cant add more elements than max size)
+
+In a dictionary, keys(no duplicate/mutable types) and values are mapped
+
+Compound Data Structures:
+
+Linear/Single Levelled - Elements form a sequence - Stacks, Queues, Linked list, Arrays
+Lists are mutable sequences that can store objects of any type
+Linear Lists are data structures that are used to store and process elements that are similar in type and are to be processed in the same way
+
+Non Linear/Multilevelled - Traversal of nodes is non linear in nature - Trees, Graphs
+
+Made of nodes, nodes have 2 parts. One has information, the other has the address(points to the next node)
+Start Node - has the address of the first node
+Dynamic allocation of memory happens during runtime in heap memory
+
+STACK
+Linear data structure implemented in LIFO(Last in First Out)(Element last inserted would be the first one to be deleted) OR (First in Last Out)
+Dynamic data structure(as it can grow and shrink)
+Changes occur only at one end - Stack's 'top'
+Element removal called - 'pop' operation
+Element Addition called - 'push' operation
+Inspecting the values at the stack's top without altering it - 'peek' or 'inspection'. When 1 element is added, top is 0. If another is added, top is 1.
+The error that occurs when one tries to push an item in a stack that is full - 'Overflow'(Stack Overflow lol)
+The error that occurs when one tries to pop/delete an item from an empty stack - 'Underflow'(Stack Underflow)
+
+APPLICATIONS OF STACKS:
+
+Recursive functions use stacks to keep track of function calls(if a function is called, a stack is created with the address of it, after finishing exec, it goes back to stack to fetch address, and it goes to the address and executes the rest like so)
+To reverse a list
+Finding factorials of numbers
+Undo and Redo eg: Back button in web browsers
+
+Infix notation - Operators are placed in between the operands (5+4)
+Prefix notation - Operators are placed before operands (+54) (Polish Notation)
+Postfix notation - Operators are placed after operands (54+) (Reverse Polish Notation)
+
+Needed Pattern of Stack Code
+Need to specify option to create a list first in each option if not done
+'''
+R={"OM":76, "JAI":45, "BOB":89,"ALI":65, "ANU":90, "TOM":82}
+def PUSH(S,N):
+ S.append(N)
+def POP(S):
+ return S.pop()
+ST=[]
+for k in R:
+ if R[k]>=75:
+    PUSH(ST,k)
+while True:
+ if ST!=[]:
+    print(POP(ST),end=" ")
+ else:
+    break
+'''

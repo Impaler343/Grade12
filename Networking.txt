@@ -1,0 +1,633 @@
+TERM 2:
+Unit I: Computational Thinking and Programming – 2
+ Data Structure: Stack, operations on stack (push & pop), implementation of stack using list.
+
+Unit II: Computer Networks
+● Evolution of networking: introduction to computer networks, evolution of networking (ARPANET,
+NSFNET, INTERNET)
+● Data communication terminologies: concept of communication, components of data
+communication (sender,receiver, message, communication media, protocols), measuring capacity
+of communication media (bandwidth, data transfer rate), IP address, switching techniques (Circuit
+switching, Packet switching)
+● Transmission media: Wired communication media (Twisted pair cable, Co-axial cable, Fiber-optic
+cable), Wireless media (Radio waves, Micro waves, Infrared waves
+● Network devices (Modem, Ethernet card, RJ45, Repeater, Hub, Switch, Router, Gateway, WIFI card)
+● Network topologies and Network types: types of networks (PAN, LAN, MAN, WAN), networking
+topologies (Bus, Star, Tree)
+● Network protocol: HTTP, FTP, PPP, SMTP, TCP/IP, POP3, HTTPS, TELNET, VoIP
+● Introduction to web services: WWW, Hyper Text Markup Language (HTML), Extensible Markup
+Language (XML), domain names, URL, website, web browser, web servers, web hosting
+
+Unit III: Database Management
+ Database concepts: introduction to database concepts and its need
+ Relational data model: relation, attribute, tuple, domain, degree, cardinality, keys (candidate key,
+primary key, alternate key, foreign key)
+ Structured Query Language: introduction, Data Definition Language and Data Manipulation
+Language, data type (char(n), varchar(n), int, float, date), constraints (not null, unique, primary
+key), create database, use database, show databases, drop database, show tables, create table,
+describe table, alter table (add and remove an attribute, add and remove primary key), drop table,
+insert, delete, select, operators (mathematical, relational and logical), aliasing, distinct clause,
+where clause, in, between, order by, meaning of null, is null, is not null, like, update command,
+delete command
+ Aggregate functions (max, min, avg, sum, count), group by, having clause, joins : Cartesian product
+on two tables, equi-join and natural join
+ Interface of python with an SQL database: connecting SQL with Python, performing insert, update,
+delete queries using cursor, display data by using fetchone(), fetchall(), rowcount, creating
+database connectivity applications
+
+
+
+
+NETWORKS
+A computer network is a collection of interconnected autonomous computing devices so as to exchange information or share resources
+
+Advantages :-
+1) Software can be shared by installing it on just one machine centrally and granting controlled access to run it on different machines
+2) Storage can be shared, which includes accessing files from any machine on the network
+3) Enhanced communication through email and other messaging software
+4) Resources can be shared to different machines online, which is considerably cheaper
+
+Disadvantages :-
+1) Due to the complexity that may arise in running a network, specialist staff may be needed to run the network
+2) If networks are badly managed, services can become unusable and productivity falls
+3) Adequate attention should be given to file security especially if connected to WANs, to protect the device from viruses
+4) If software and files are held centrally, failure of the central node will mean the failure of the entire network
+
+
+EVOLUTION OF NETWORKING
+
+ARPANET - Advanced Research Projects Agency Network
+A research project commissioned in the 1960s by the US Department of Defence to connect the academic and research institutions located at different places for scientific collaborations
+The first message was communicated between the University of California, Los Angeles (UCLA) and Stanford Research Institute (SRI)
+Shut down in 1990
+
+NSFNET - National Science Foundation Network
+Built in the 1980s, a new high-capacity network more capable than ARPANET
+Allowed only academic research on its network and not any private businesses, after which many private companies built their own networks which were later interconnected with ARPANET and NSFnet to allow private workflow
+Shut down in 1995
+
+Internet - World Wide Network of computer networks
+Evolved from ARPANET, composed of many networks each run by a different company and interconnected at peering points
+Allows users connected to one network to communicate with users on another network
+Connects many small networks and allows computers to exchange information with each other
+Most computers are not directly connected to the Internet; Rather they are connected to smaller networks, which in turn are connected through gateways to the Internet backbone
+
+
+TYPES OF NETWORKS:
+
+PAN - Personal Area Network
+Interconnection of information technology devices such as smart-phones, laptops and printers typically within the range of 10 metres
+Can be wired (mobile connected to a laptop via a wire) or wireless (WIFI)(Two smartphones communicating through Bluetooth)
+
+LAN - Local Area Network
+Network that connects devices within a range of 1km, in an office, school, college or Internet cafes
+Connection is done by ethernet cables, WIFI and optical cables
+Cables are used to connect Network Interface Cards in each computer
+A computer is designated as the file server (A computer that serves the requests related to file sharing, storing etc.)
+Comparatively (to WAN) secure as only authentic users in the network can access information
+Ethernet is a LAN architecture that uses either a bus or star topology
+Data Transfer is quite high (10Mbps (Megabitspersecond)(Ethernet) to 1000Mbps (Gigabit Ethernet))
+Ethernet is the set of rules that governs how computers and other devices are connected to each other in a Local Area Network
+
+MAN - Metropolitan Area Network
+Network that covers a large geographical area as big as a city(30-40km)
+Data transfer rates are of the order of Mbps but considerably less as compared to LAN
+eg: Cable based broadband internet services or Cable TV networks (Hence wired connection is used in MAN)
+
+WAN - Wide Area Network
+Internet is the largest WAN
+Network spread across countries or continents
+Can be formed by connecting a group of LANs (large businesses, government and educational organisations connect their different branches), through public networks/leased lines/satellites
+WANs link computers to facilitate fast and efficient exchange of information at lesser costs and high speeds
+Leased Line - A permanent telephone connection between two points set up by a government regulated organisation that provides telecommunication services to the public
+
+
+NETWORK DEVICES:
+
+__Modem__(Modulation-Demodulation)
+A device that allows the computer to connect and communicate with other computers by sending and receiving data over telephone lines
+For compatibility in the line, the modem converts digital data to analog while sending, and vice versa while receiving
+Modulation is done in 3 different ways - Amplitude Modulation (AM), Frequency Modulation (FM) and Phase Modulation (PM)
+Modems are of two types - Internal Modems (That are fixed within the computer) and External Modems (Connected externally to the computer)
+
+__Network Interface Card (NIC)__ (Terminal Access Point (TAP)) (Network Interface Unit (NIU))
+A network adapter used to set up a wired network
+It acts as an interface between the computer and the network to share resources and is attached to each of the workstations and the server
+Data transfer rates from 1Mbps to 1000Mbps is supported
+Ethernet Card - A specific type of NIC, specific to Ethernet technology
+
+__WIFI Card__
+Either an internal or external LAN adapter with a built-in wireless radio and antenna
+Allows you to setup your workstation or home office without considering the proximity or availability of hard-line network access
+
+__RJ-45__ (Registered Jack-45)
+Eight pin connector used to connect computers in LANs, especially Ethernets
+Looks similar to RJ-11s (Standard Telephone Connector), but is wider and houses eight wires instead of 4
+
+__Hub__(Concentrator)
+Networking device having multiple ports that are used for connecting multiple computers or segments of a LAN together
+A device that provides a central connection point for cables from workstations, servers and peripherals
+Multi-port cards can be plugged in to provide additional access as the network grows in size 
+Can only receive or transmit data at a time (single lane communication), also, it is a non-intelligent device that sends data to all the devices (the ones who need it pick it up) (Unnecessary traffic generated) (less expensive than switches)
+Active Hubs amplify signals as it moves from one device to another (Like repeaters)
+Passive Hubs just forward the signals coming to it
+
+__Switch__ 
+Plays a central role in LANs (which will now be called Switched LANs) as it is used to connect multiple computers or communicating devices 
+Device that is used to segment networks into different subnetworks/subnets/LAN segments, preventing traffic overloading in the network
+Extracts the destination address from the data packet and looks it up in a table to see where to send the packet and forwards signals to only selected devices(directly) instead of sending to all 
+It can forward multiple packets at the same time. It can also ask the sender to resend corrupted signals
+
+__Repeater__ 
+Analog device that Amplifies OR Restores weak signals being transmitted over long network lines
+An Amplifier amplifies all incoming signals over the network (even corrupted ones)
+A Signal Repeater collects the inbound packet and retransmits the packet as if it were starting from the source itself after filtering out corrupted signals
+
+__Router__
+Device that can receive the data, analyse it and transmit it to other networks
+Connects a LAN to the Internet, analyses data being carried over the network and decides/alters how it's packaged (for example, regulating packet sizes for compatibility between various networks (too big or small))
+Can be wired or wireless
+Transmits data speedily over the most efficient path from one LAN to another using a Routing Table
+
+__Gateway__
+Key access point that establishes an intelligent connection between a local network and external networks of completely different structures
+In homes, the gateway is the ISP that connects the user to the Internet
+Serves as an entry or exit point of a network. All incoming and outgoing data must pass through the gateway to use the routing paths
+Also maintains information about the host network's internal connection paths and routes the signal to the destination in the best possible route 
+Often acts as a proxy server and a firewall (prevents unauthorized access from a private network) and a switch and a router
+Can be implemented in the form of a software, hardware or a combination of both
+
+
+DATA COMMUNICATION TERMINOLOGIES:
+
+Data Communication - Exchange of data between two or more networked or connected devices
+
+Data/Communication Channel - Medium used to carry information or data from one point to another
+
+Workstation is a computer, when its connected, it is called a node
+
+Hosts/Nodes - Computers that are attached to a network and are seeking to share resources of the network
+
+Network Operating System - Specialized operating system that can handle networking tasks
+
+__Bandwidth__  
+In Analog systems - The range of frequencies available for transmission of data through that channel. Difference of maximum and minimum frequency contained in the composite signals
+In Digital systems - data speed in bps (directly proportional to the complexity of data for a given level of system performance) (directly proportional to the amount of data transmitted or received per second)
+
+Data Transfer Rate - Number of bits transferred per second between source and destination. Also called bit rate, Measured in terms of bits per second(bps)OR baud(1baud=1bps)
+
+Simplex Communication - Unidirectional communication in which one device is the sender and the other device is the receiver. eg: Signals from satellite to TV
+
+Half-Duplex Communication - Two Way Bidirectional communication in which both the devices can send or receive data or control signals in both directions, but not at the same time. eg: Walkie Talkie
+
+Full-Duplex Communication - Two Way Bidirectional communication in which both devices can send and receive data simultaneously. Can be implemented by using two separate simplex lines, or the capacity of the single channel is shared between the signals travelling in both directions
+
+Switching techniques - Methods by which data can be transmitted across networks
+
+__Circuit Switching__ 
+A dedicated end to end path is identified between the sender and the receiver, which is a connected sequence of links between network nodes
+All packets follow the same path established during the connection
+
+__Packet Switching__ 
+Each information or message to be transmitted between sender and receiver is broken down into smaller pieces, called packets, which are then transmitted independently through the network. Different packets of the same message may take different routes depending on availability
+Unlike circuit switching, a channel is occupied in packet switching only during the transmission of the packet. On completion of the transmission, the channel is available for transfer of packets from other communicating parties.
+Each packet has two parts - a header containing the address of the destination and other information, and the main message part. When all the packets reach the destination, they are reassembled and the complete message is received by the receiver. 
+TCP Protocol is responsible for dividing the file into packets on the source computer as well as reassembling the packets at the recipient computer
+The IP Protocol is responsible for handling the address of destination computer so that each packet is routed to its proper destination 
+
+__Peer to Peer Network__
+Each computer can play the role of a client and a server, and there is no computer designated as in charge of network operation
+Each computer controls its own information and plays the role of either a client or a server depending upon what is needed at that point of time
+Called non-dedicated servers, as it is not completely dedicated to the cause of serving
+Since one computer works as a workstation as well as a server, it is slower and requires more memory
+Typically, a peer-to-peer network consists of up to ten computers
+Peer-to-peer networks are inexpensive and easy to install, but they are limited in scope and difficult to secure
+
+__Client Server Networks__(Or Master-Slave Networks)
+On bigger network installations, there is a computer reserved for the server's job and its only job is to help workstations access data, software and hardware resources. It is called a dedicated server
+There may be several servers that perform specific tasks only, like a server exclusively serves file related requests(Called File Server), similarly there may be a printer server, modem server etc.
+A client computer is the computer on a network that requests and utilizes network resources. A server is a computer on the network, dedicated to precessing clients' requests 
+eg: A web browser is a client which makes requests to a server, and the server sends the website to the browser
+
+Differences between P2P and Cl/Se:
+1) Server controls the security of a network, while in P2P there is no central control over security
+2) The server manages the network, along with a dedicated team of people while in P2P, there is no centralized control of the network and anyone can set it up
+3) Data is backed up on the main server, but in P2P data has to be backed up on each computer, and data can be easily deleted by users
+
+
+Datagram - A collection of data that is sent as a single message
+
+Device Drivers - Software that communicates with other hardware devices and acts as an interface between them.
+eg: NIC Card 
+
+80-20 Rule - 80 percent of the traffic on a given network segment should be local(destined for a target in the same workgroup), and not more than 20 percent of the network move across a backbone
+
+TRANSMISSION MEDIA:
+The links that carry messages between two or more communicating devices
+GUIDED TRANSMISSION - There is a physical link made of wire/cable through which data in terms of signals are propogated between nodes
+
+__Twisted Pair Cable__ 
+Consists of two identical insulated copper wires wrapped together in a double helix. Usually a number of such pairs are combined together and covered with a protective outer PVC jacket
+The twisting of wires reduces crosstalk, interference and bleeding of signals from one wire to another which can corrupt signals
+Unshielded Twisted Pair cables can be used for a variety of electronic communications from exclusive voice grade communications to data grade transmissions
+Shielded Twisted Pair cables are additionally shielded which further protects it from external interference and increases segment length, but are heavier and costlier than unshielded cables
+
+Advantages :-
+1) It is simple and easy to install and maintain
+2) It is physically flexible, has low weight and can be easily connected
+3) It is very inexpensive
+
+Disadvantages :-
+1) Due to high signal interference, it is incapable of carrying a signal over long distances without the use of repeaters
+2) Its low bandwidth capabilities make it unsuitable for broadband applications
+3) It supports maximum data rates of 1Mbps without shielding and 10 Mbps with shielding
+
+
+__Coaxial Cable__ 
+It consists of a copper wire at the core of the cable which is surrounded with an insulator which is again surrounded by a conducting copper mesh which is finally surrounded by an outer shield
+Thinnet - This form of the coaxial cable can have a maximum segment length of 185mts
+Thicknet - This form of the coaxial cable is thicker than thinnet and has a maximum segment length of 500mts
+
+Advantages :-
+1) Due to high electrical conduction properties with reduced interference, it is suitable for high speed communication
+2) As it offers bandwidths of upto 400 MBps, it can be used as the basis for shared cable network
+3) Very popularly used in providing affordable long distance telephone communication and TV cable transmission, where several channels can be broadcasted(broadband) simultaneously
+
+Disadvantages :-
+1) Expensive as compared to twisted pair cables
+2) They are not compatible with twisted pair cables
+
+
+__Optical Fibres__
+The optical fibre carries data as light which travels inside a thin fibre of glass, from the source at one end to the detector at the other end
+It consist of a thin transparent strand of glass at the centre(core) covered with another layer of glass called cladding, which reflects light back to the core. This whole arrangement is covered with an outer jacket made of PVC or Teflon
+Singlenode fibre optic cable supports a segment length of 2kms and bandwidth of upto 100 Mbps, while Multinode supports a segment length of 100kms and bandwidth of 2 Gbps
+
+Advantages :-
+1) It is immune to electrical and magnetic interferences, because the information is travelling in a modulated light beam
+2) Guarantees secure transmission
+3) Has a very high transmission capacity(150Mbps to  10Gbps) and can be used for broadband communication, as it has can handle high bandwidths
+
+Disadvantages :-
+1) Connecting two fibres together, or a light source to a fibre is very difficult
+2) Connection losses are a common problem and light can reach the receiver out of phase
+3) Fibre optics are quite fragile and need special care to make them sufficiently robust for an office environment
+4) They are the most expensive of all cables
+5) As light travels only in one direction, two cables are required for full duplex communication 
+
+
+UNGUIDED TRANSMISSION - Data travels in air, water or vacuum through electromagnetic waves using an antenna
+
+__Terrestrial Microwave__
+Consists of a transmitter, receiver and the atmosphere(Fastest Unguided Medium)
+Parabolic antennas are mounted on towers to send a beam to other antennas, kilometers away. The higher the tower, greater is the range
+Uses Line of Sight communication where a signal originates from an antenna, passes through the atmosphere in a straight line free of material obstacles, and is received by another antenna
+
+Advantages :-
+1) The cost of digging trenches for laying cables and maintaining them is cut down
+2) It offers freedom from the hassle of obtaining licenses and land aquisition rights, required for laying cables
+3) It offers long distance communication facilities over difficult terrain and overseas too, with the implementation of repeaters every 30 miles
+
+Disadvantages :-
+1) It is an insecure form of communication
+2) Microwave propogation is susceptible to weather effects such as rain, thunder storms etc., and it cannot penetrate through walls
+3) Bandwidth allocation is extremely limited
+4) The cost, design, implementation and maintenance of microwave links is very high
+
+
+__Radio Waves__
+Omnidirectional(in all directions) transmission by radiating and capturing radio frequencies in the form of continuous sine waves 
+Consists of a receiver and transmitter(antennas) which encode and decode data onto and from the sine wave respectively
+Different private businesses and citizens use different sine wave frequencies, and are generally licensed to operate in the range of about 10 miles(generally used in hill stations)
+
+Advantages :-
+1) Offers long distance communication overseas
+2) Signals can penetrate through walls and buildings
+3) The cost of digging trenches for laying cables and maintaining them is cut down
+4) It offers freedom from the hassle of obtaining licenses and land aquisition rights, required for laying cables
+
+Disadvantages :-
+1) It is an insecure form of communication
+2) It is susceptible to weather effects such as rain, thunder storms etc.
+
+
+__Satellite Microwave__
+Communication through synchronous satellites(transponders) that accept, amplify and transmit signals being sent from ground stations to another ground station
+Some firms own a satellite, and others lease a portion of the satellite and provide transmission facilities in smaller units
+Security in satellite transmission is usually provided by certain coding and decoding equipment
+Unidirectional, reciever and pointer must be pointing exactly in the same direction, cannot penetrate through walls and buildings
+
+Advantages :-
+1) The area covered by satellites is quite large, covering certain sparsely populated areas too
+2) The heavy usage of global facilities, makes satellite communication attractive
+3) The laying and maintaining of intercontinental cables is impractical and this is where satellite communication proves to be the best alternative
+4) Provide backup incase of emergency disaster, when terrestrial communication networks are rendered inoperable
+
+Disadvantages :-
+1) The technological limitations in many countries prevent the deployment of large, high gain antennas
+2) Over crowding of available bandwidths due to low antenna gains
+3) The high investment cost of towers and repeaters along with a significant probability of failure
+
+__Infrared Waves__
+Uses infrared light to send data within small distances, as it has very limited penetrating power
+Considered fairly secure and is used in many hand held devices like mobile phones and TV remotes
+
+
+NETWORK TOPOLOGIES:
+Pattern of interconnection of nodes in a network is called a topology
+
+__Point to Point Link__
+Each station receives exactly from one transmitter and each transmitter transmits to exactly one receiver.
+The transmission and receiving can occur over seperate wires for better performance, or they can take turns over the same wire using different techniques
+
+
+__Star Topology__
+Each communicating device is connected to the central node by a single path
+The Central Node can be a broadcasting device(data transmitted to all the nodes in the network) or a unicast device(Central node can identify the destination and forward data to that node only)
+
+Advantages :- 
+1) Centralized Control facilitates easy fault detection, diagnosis and isolation
+2) Failure of a single node involves disconnecting one node from an otherwise fully functioning network 
+3) Easy access for service and reconfiguration of the network with different protocols, due to the availabilty of a number of concentration points
+4) Simple access protocols are adopted as each device is directly connected with the central device and only the central node has control of the medium of transmission
+
+Disadvantages :- 
+1) If the central node fails, the entire network is rendered inoperable, and hence the network is heavily dependant on the central node 
+2) Expansion of the network involves the inconveniency of connecting the new node all the way to the central node
+3) As each node is connected directly to the central node, a large amount of cable is needed which causes congestion in cable ducts and poses maintenance and installation difficulties
+
+
+__Bus topology__(Linear Topology)
+Consists of a single length of the transmission medium(central backbone) onto which all computers and the server are connected 
+Typically the host at one end of the bus communicates with several terminals attached along its length
+The transmission from any station travels the length of the bus, in both directions, and can be received by all other stations. Terminators at the end of the bus absorb signals
+
+Advantages :-
+1) Due to a single common data path connecting all the nodes, cable length reduces, hence reducing installation costs 
+2) The linear architecture has an inherent simplicity in maintenance and usage which makes it very reliable from a hardware point of view
+3) Additional nodes can be connected at any point on the backbone making extensions easy. More extensive extensions are made with the use of repeaters
+
+Disadvantages :- 
+1) Fault detection may have to be performed on different points on the network due to the absence of a central control
+2) Fault isolation is difficult as the issue has to be rectified at the point where it is connected to the bus, and cannot be removed
+3) Reconfiguration of the whole network maybe necessary during extension of the backbone using repeaters
+4) As each node is directly connected to the central bus, there must be a protocol to decide which node can use the network at what time, most efficiently 
+
+Bridge - Used in bus topology to increase efficiency and security by disecting backbones and prohibiting data from going to a segment which does not need the data, instead of pushing it into the whole backbone and letting all the computers read it
+
+
+__Tree Topology__(Hybrid Topology)
+It is a hierarchial topology in which there are multiple branches and each branch can have one or more basic topologies like star, bus and ring
+Usually used in WANs to connect multiple LANs
+Here, data transmitted from source first reaches the centralised device and from there the data passes through every branch where each branch can have one or more nodes
+Data transmission takes place in the same way as the bus topology, there are terminators at the end of each backbone
+
+Advantages :-
+1) Uses point-to-point wiring for individual segments
+2) It is supported by several harware and software vendors
+
+Disadvantages :-
+1) If the backbone line stops functioning, the entire segment goes down
+2) It is more difficult to configure than other topologies
+
+
+PROTOCOLS
+
+A protocol is a formal description of message formats and the rules that two or more machines must follow to exchange those messages
+Protocols support multitasking
+Protocols define standardized formats for data packets, data transfer rates(to standardize transmission and receiving speeds), access control(standardizing sending and receiving access over a single line to prevent data collisions,corruption and losses), techniques for detecting and correcting errors and so on
+Protocols also define how computers identify one another on a network, how to rearrange packets and process them at the destination
+
+__HTTP__(Hyper Text Transfer Protocol)
+The set of rules for transferring hypertext(text, graphic, image, sound etc.) on the World Wide Web
+A request-response or client-server protocol that establishes a communication link between the server and the client and facilitates access of hypertext from the World Wide Web by defining how information is formatted and transmitted and how web servers and browsers should respond to those commands 
+Contains various built in request methods which allows the user to read a webpage's header, or to store a webpage, or to remove a webpage, or to connect two existing resources, or to break a connection between two existing resources
+
+__FTP__(File Transfer Protocol)
+Standard for exchange of files across the Internet
+Protocol used for transferring files from one network to another, works on a client server model, potent and powerful way to share information over the Internet
+Handles issues such as use of different conventions for naming files, having different directory structure and representation of text in different formats
+
+__PPP__(Point to Point Protocols)
+Defines how two communicating devices will authenticate each other and establish a direct link between them to share data.(must have duplex modes to use this protocol)
+Maintains data integrity and ensure that the packets arrive in order, intimates the sender about corrupted or lost packets
+Current best solution for dial up Internet connections like ISDN, and enables the average user to obtain direct Internet access for her own PC via a simple modem and a telephone line, at a very low cost, provided the computer runs the software that can communicate with TCP/IP and it has an IP address
+Provides the ability to transport TCP/IP traffic over serial lines(telephone lines)
+eg: Home Internet users' modems use PPP
+Works using these protocols :- 
+IPCP(IP Control Protocol) - for transportation over PPP link
+NCP(Network Control Protocol) - for traffic transportation
+LCP(Link Control Protocol) - for link establishment
+
+__SLIP__(Serial Line Internet Protocol)
+First protocol used for delivering IP packets over dial up lines
+It defines an outdated encapsulation mechanism, and there is no support for dynamic address assignment, link testing or multiplexing different protocols over a single link
+It has been largely replaced by PPP
+
+__SMTP__(Simple Mail Transfer Protocol)
+Uses the email address of the recipient to send the mail and is not concerned with the contents of the mail 
+Takes mails from the outgoing queue and transmits them to the destinations, removes the corresponding receiver's mail address from the sender list, and finally removed from the outgoing queue
+
+__IMAP__(Internet Message Access Protocol)
+Client/Server protocol for accessing email from a local server in which the email is received and held for the user by the Internet Server
+Also works over a slow connection, as only a small data transfer is involved
+Only if the user wants to read a specific email, then it will be downloaded from the server; Creating and managing folders/mailboxes on the server is also possible 
+
+__POP3__(Post Office Protocol 3)
+Provides a simple and standardized way for users to access mailboxes and download messages to their computers
+Enables downloading messages to the user's local computer and then cutting the Internet connection to read the mail at one's own leisure without incurring further communication costs
+
+__TCP/IP__(Transmission Control Protocol/Internet Protocol)
+TCP/IP is the base communication protocol of the Internet. IP uses numeric IP addresses to join network segments and TCP reliably delivers messages between networked computers
+TCP is responsible for making sure that the packets get through to the other end, keeping track of what is sent, retransmits any packet that did not get through, and reassembled into the original message(packets can take different routes based on congestion) 
+Four Layers of TCP/IP:
+#An application protocol(such as mail)
+#A protocol such as TCP that provides services needed by many applications
+#IP, which provides basic service of getting datagrams to their destination(ensures that each node is assigned an IP address)
+#The protocols needed to manage a specific physical medium such as Ethernet
+
+__VoIP__(Voice Over Internet Protocol) 
+Enables voice communications over the Internet through compression of voice into data packets that can be efficiently transmitted over data networks and then converted back into voice at the other end
+The most common protocol used for communicating on packet switched networks is Internet Protocol(IP) and VoIP allows for transmission of voice along with other data over these same packet switched networks and provides an alternative to traditional telephone networks, which use a fixed electrical path to carry voice signals through a series of switches to a destination
+
+IRC(Internet Relay Chat) - Most common chat protocol
+SIP(Session Initiation Protocol) - Most common video conferencing protocol 
+
+OSI Model - Open Systems Interconnection Model - 7 layers
+Layers:(First three are software, last three are hardware)
+
+Application: Computer applications that help in connecting the system with the Internet
+
+Application protocols:
+1) FTP(File Transfer Protocols) - Helps in uplpoading and downloading data from and to server(Formats etc.) 
+
+2) Web Surfing Protocols 
+HTTP(Hyper Text Tranfer Protocol)
+HTTPS(Hyper Text Tranfer Protocol Secure)(How secure? Encryption done on data that is requested) 
+
+3) Email Protocols 
+POP3 - Helps in accessing mails offline 
+IMAP - Helps in maintaining unread, deleted, sent, starred mails etc.
+SMTP - Helps in connecting devices for displaying mail in other devices
+
+4) Virtual Terminal(TELNET) - For taking control of other systems from your system
+
+Presentation:
+1) Translation - Translates data into binary code
+2) Data Compression - Compresses data for transmission
+3) Encryption and Decryption - encrypts while sending, decrypts while receiving
+
+4) Session:
+First checks if you are an authenticated(ID and pass), and then checks authorization and gives data to client  
+Establishes connection between node and server and after response has been received, it disconnects the node from the server
+
+5) Transport:
+TCP(Transfer Control Protocol) - Packets of data put into sequence, sends messages for corruption or missing packets or reduction of packet size, segmentation happens and 
+UDP(User Datagram Protocol) - Just like TCP, but it does not check for errors/packets lost etc., it just sequences and tranfers data. eg Movie streaming
+
+6) Network:
+IP(Internet Protocol) - Finds fastest path for data transfer, adds IP address to packets, checks if the particular IP belongs to a network, throws data into the network, finds the receiver computer using mac address, and sends it to that node
+
+7) Datalink layer(DLL):
+Logical Addressing - Data packets have Sender and Receiver address, has 'Tail' which returns error code of the data(OK or not)
+Physical Addressing - Adds mac address to the segment, when data is being received by the recieving node(Now segment is called 'frame')
+PPP(Point to Point) - Used for transmitting IP packets over serial lines
+
+
+INTERNETWORKING TERMS AND CONCEPTS:
+
+__Mac(Media Access Control) Address__ 
+The permanent unique physical or hardware address assigned to each NIC by the NIC manufacturer
+Each MAC address is a 12-digit hexadecimal number (48 bits in length), of which the first six digits (24 bits) contain the manufacturer’s ID called Organisational Unique Identifier (OUI) and the later six digits (24 bits) represents the serial number assigned to the card by the manufacturer.
+eg: FC:F8:AE:CE:7B:15
+
+
+__IP Address__(Internet Protocol Address)
+Unique address used to uniquely identify each node on the Internet
+Assigned to each node that uses Internet Protocol for communication
+Unlike MAC address, IP address can change if a node is removed from one network and connected to another network
+The initial IP Address called version 4 (IPV4 in short), is a 32 bit numeric address, written as four numbers separated by periods, where each number is the decimal (base-10) representation for an 8-bit binary (base-2) number and each can take any value from 0 - 255. 
+eg: 192:168:0178
+With more and more devices getting connected to the Internet, it was realised that the 32-bit IP address will not be sufficient as it offers just under 4.3 billion unique addresses. Thus, a 128 bits IP address, called IP version 6 (IPV6 in short) was proposed. An IPv6 address is represented by eight groups of hexadecimal (base-16) numbers separated by colons.
+eg: 2001:CBDA:0000:0000:0000:0000:3257:9652
+
+
+__WWW(World Wide Web)__
+WWW is NOT the Internet but is a small part of it
+It is an ocean of information stored in the form of trillions of interlinked webpages and web resources, which can be accessed through the Internet
+It is a set of protocols that allow you to access any document on the internet through the naming systems based on URLs
+
+Some Attributes:
+1) It is user friendly as WWW resources can work easily with mosts Internet browsers
+2) WWW allows and supports the Internet users to create, link or display webpages with multiple multimedia elements such as graphics, audio, video and text
+3) WWW supports dynamic links(hyperlinks) to relate files or documents, even on the net
+4) WWW supports interactivity between users and servers through input boxes in the form of radio buttons, check boxes and so on
+5) WWW supports the creation and management of multiple independently controllable sections on a single webpage(Frames)
+
+__HTML__(Hyper Text Markup Language)
+It is a language which is used to design standardized webpages so that the web contents can be read and understood from any computer
+It is a document layout that tells the browser how to display the contents of a hypertext document
+It provides many layout commands, called tags(for headers, lines, image alignment, paragraph alignment and so on), that lets you control the presentation of information
+
+__XML__(eXtensible Markup Language)
+It is a meta-language for describing markup languages and does not have fixed semantics and tag sets(unlike HTML, where you build a webpage based on available tags, but here you make another HTML itself and use that)
+It provides a facility to define tags and structural relationships between them
+All of the semantics of an XML document will be either defined by the applications that process them or by stylesheets
+
+__DHTML__(Dynamic HTML) 
+DHTML refers to new HTML extensions that will enable a Web page to react to user input without sending requests to the server
+It refers to content on a web page that changes as per a number of parameters such as geographic location of the reader, time of the day, previous pages viewed by the reader, profile of the reader etc.
+It allows a web page to 'change' after it is loaded into the web browser, without any communication with the web server for an update(Animated HTML)
+
+__URI__(Uniform Resource Identifier) OR URL(Uniform Resource Locator)(web address)
+It is a unique address or path for each resource(website) located on the web
+It contains not only the domain name but also other information that completes a web address
+eg: http://www.ncert.nic.in/textbook/textbook.html
+
+http - is the 'type' OR 'protocol'(specifies the type of server in which the file is located)
+Other examples of type:
+ftp - Files organized in a hierarchial structure(FTP)
+gopher - Files organized in a menu structure(TCP/IP)
+http - Links to multimedia documents available on the net(HTTP)
+mail - Messages sent via electronic mail(POP3/SMTP)
+news - Newsgroups organized in a hierarchial structure(NNTP-Network News Transfer Protocol)
+
+www.ncert.nic.in  - is the 'domain name'(address of the server)
+(.in) - 'Domain Indicator'(India) eg: au(Australia), ca(Canada), jp(Japan), nz(NewZealand), fr(France), dk(Denmark)
+(.com) - Commericial entity
+(.edu) - Educational entity
+(.gov) - Governement entity
+(.org) - Non-profit organization
+(.net) - ISPs/networks
+(.mil) - Military organization
+(.co) - Company
+(.biz) - Business
+(.tv) - Television
+
+textbook/textbook.html - is the path(tells the location of the file on the server)
+
+__Domain Names__
+Each computer server hosting a website or web resource is given a name against its IP address(Domain Names/Host Names)
+The character based naming system by which servers are identified is also known as Domain Name System(DNS)
+
+__DNS Server__
+The conversion of the domain name of each web server to its corresponding IP address is called Domain Name Resolution, and this is done through a server called DNS Server
+The DNS Server maintains a database of domain names and their corresponding IP addresses
+The DNS servers are placed in hierarchial order, the toplevel consists of 13 root servers, below which there are other DNS servers
+A DNS Server may contain the IP address of a domain name or an IP address of another DNS Server where the domain name can be searched
+
+__Telnet__
+Telnet is an Internet utility that lets you log onto remote computer systems from your own computer, provided you have access(through a login page)
+
+Web Browser - It is a WWW client that navigates through the World Wide Web and displays webpages
+Web Server - WWW server that responds to the requests made by web browsers
+Website - A location on a net server
+Webpage - A document on a website that uses HTTP 
+Homepage - The top-level web page of a web site.
+Web Portal - Website that hosts other websites(has hyperlinks to other websites)
+
+__WebHosting__ 
+Web hosting is a service that allows organizations and individuals to post a website or web page onto the server, which can be viewed by everyone on the Internet.
+Web hosts allow their customers to place web documents such as html pages, graphics, and other multimedia files onto the web server, which maintains constant high speed connections to the backbone of the Internet
+
+Types of Web-Hosting :-
+_Free Hosting_ 
+Small space with limited features, usually created for fun, offered by many prominent sites like tripod, homestead and geocities
+
+_Virtual/Shared Hosting_ 
+Where one's website domain is hosted on the web server of the hosting company under one's own domain name along with other websites
+One can access and update the site 24/7 through a login ID and password, hence it is also secure. Maintenance of server taken care of by the hosts, small amount payed
+Usually for the people who are serious about doing some business or have a professional site or (is rich and)simply prefer your own domain name and space
+
+_Dedicated Hosting_
+A company rents an entire webserver from a hosting company. Suitable for companies hosting larger websites or maintaining others' sites
+Associated with large, high-traffic sites or those with special needs such as e-commerce or security, usually quite expensive
+
+_Co-Location Hosting_
+Similar(but less restrictive) to that of dedicated hosting except for the fact that the company owns the server on which its site is hosted and is responsible for all the maintenance and server administration, and its physical needs(such as providing rack space for the server)
+This generally includes high speed connection to the Internet, a regulated power supply, and a limited amount of hands on technical support for needs such as data backup or hardware upgrades
+Suitable for those with complex needs and for those who require the ability to make changes as per its changing requirement
+
+
+QUESTIONS:
+
+Draw both bus and star topologies if they ask for best
+
+Star Topology
+Building with maximum computers acts as the server as per 80-20 rule
+No of connecting lines = No of centres - 1
+
+Min length of Cable - Find 3 minimum distances - Bus Topology
+least length is not NECESSARILY BUS - it may also be Star Topology
+
+HUGE distance - Satellite
+Hubs and switches placed in ALL buildings
+Repeaters placed whenever distances cross 100mts
+Range big, and cost is less - Satellite or Coaxial
+Never use Ring topology and Twisted Pair
+'Firewall' for security in the complex
+Wifi Card for wireless communication, Protocol for Internet Access - TCP/IP
+For online face to face communication - Video Conferencing
+For connecting computers within each building - Hub/Switch(For devices inside a LAN)
+
+Write down the total cable length for each diagram(WITH UNITS m/km), label diagram with hubs and repeaters ONLY WHEN IT IS ASKED

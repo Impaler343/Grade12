@@ -1,0 +1,60 @@
+Project VIVA
+1. Describe your project
+2. Advantages of your project
+3. How you gathered requirement of your project?
+4. How and where can you implement your project?
+5. Which software is used in your project?
+6. What are the methodology used in your project?
+7. What is your role in the project?
+8. Explain the data flow of your project?
+9. What are the drawback of your system?
+10. From where did you get reference/guide for your project work?
+11. What is your group size? How did you divide the tasks among yourselves?
+What strategy did you follow to integrate daily developments of your project?
+12. Why did you choose this topic?
+13. Mention three most important references that helped you in executing the project
+14. Given a chance now, do you think you can perform well in the project, If yes, then explain
+how?
+15. Have you made this project yourself?
+16. What is the front end and back end of your project?
+17. What are the different modules used in your project?
+18. What have your learned from the project?
+19. What were the objectives of the project?
+20. Were the objective addressed?
+21. If you were to start again, is there anything you would like to change
+22. What were the best features of your project?
+23. 'My project is my Original work'. Comment on this.
+24. Explain the working of each individual components
+25. What went wrong in your project?
+
+Threading
+Python threading allows you to have different parts of your program run concurrently and can simplify your design.
+A thread is a separate flow of execution.
+A daemon is a process that runs in the background.
+If a program is running Threads that are not daemons, then the program will wait for those threads to complete before it terminates. Threads that are daemons, however, are just killed wherever they are when the program is exiting.
+
+Multithreading:
+The CPU execution switches between these threads very quickly and gives off the impression that the computer is running things in parallel.
+
+types of threads:-
+User-level threads: These are the ones we can actively play with within our code etc.
+Kernel-level threads: These are very low-level threads that act on behalf of the operating system.
+
+def fixed_map()
+This is a developer level fix for a bug in the style_object.map('Treeview',foreground = ..., background = ...)
+It removes excess keys that start with '!disabled' and '!selected' and only allows keys that start with 'disabled' and 'selected' that are mapped to the foreground and background attributes
+This enables us to change foreground and background colours of the Treeview on demand
+
+instead of fetching one by one, when we use buffered = True, it fetch the entire resultset for us to work on
+For nonbuffered cursors, rows are not fetched from the server until a row-fetching method is called. 
+In this case, you must be sure to fetch all rows of the result set before executing any other statements on the same connection, else error will come, this is useful as we are not necessarily fetching all the rows in each cursor command
+
+exe file
+An executable file (EXE file) is a computer file that contains an encoded sequence of instructions that the system can execute directly when the user clicks the file icon.
+secrets - Used instead of roll no. etc., as if we delete a card, and then add another one, it will have the same roll no. as the last card(im not sure abt this)
+
+traceback
+Printing the stack trace to handle the exception generated. The printing stack trace for an exception helps in understanding the error and what went wrong with the code.
+(idk why you needed this, pls check and update this)
+
+pyglet.font.add_directory() - adds all font files in the current directory

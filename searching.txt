@@ -1,0 +1,7 @@
+Linear Search - Unsorted array works
+
+Binary Search - Sorted array in ascending needed
+ checking middle int(Beg+End /2)
+ if its up - starting is M+1
+ if its down - ending is M-1
+ till L<=U
